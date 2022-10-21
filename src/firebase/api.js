@@ -2,7 +2,6 @@ import {
   collection,
   addDoc,
   updateDoc,
-  onSnapshot,
   deleteDoc,
   doc,
   getDoc,
@@ -15,16 +14,11 @@ const collectionName = "people";
 export const addPeople = (person) =>
   addDoc(collection(db, collectionName), person);
 
-export const updateWebsite = (id, updatedFields) =>
-  updateDoc(doc(db, collectionName, id), updatedFields);
-
-export const onGetLinks = (callback) => {
-  const unsub = onSnapshot(collection(db, collectionName), callback);
-  return unsub;
-};
+export const updatePerson = (id, data) =>
+  updateDoc(doc(db, collectionName, id), data);
 
 export const getPeopleList = () => getDocs(collection(db, collectionName));
 
 export const deletePerson = (id) => deleteDoc(doc(db, collectionName, id));
 
-export const getWebsite = (id) => getDoc(doc(db, collectionName, id));
+export const getPerson = (id) => getDoc(doc(db, collectionName, id));

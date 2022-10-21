@@ -1,15 +1,33 @@
-import { useState } from "react";
-import { addPeople } from "../firebase/api";
+import { useState, useEffect } from "react";
+import { addPeople, getPerson, updatePerson } from "../firebase/api";
 
-function Form({ handleMutate }) {
+function Form({ handleMutate, updateMode, handleUpdate, updateId }) {
   const initialState = {
     name: "",
     age: "",
-    address: "",
+    city: "",
+    country: "",
+    zip: "",
+    color: "",
     image: "",
+    college: "",
   };
 
   const [datos, setDatos] = useState(initialState);
+
+  useEffect(() => {
+    if (updateMode) {
+      const getPersonData = async () => {
+        const person = await getPerson(updateId);
+        setDatos(person.data());
+      };
+      getPersonData();
+    }
+
+    if (!updateMode) {
+      setDatos(initialState);
+    }
+  }, [updateId]);
 
   const getRandomImage = async () => {
     const random = Math.floor(Math.random() * 30);
@@ -32,11 +50,18 @@ function Form({ handleMutate }) {
 
     const randomImage = await getRandomImage();
 
-    addPeople({
-      ...datos,
-      image: randomImage,
-    });
+    if (updateMode) {
+      updatePerson(updateId, datos);
+    }
+
+    if (!updateMode) {
+      addPeople({
+        ...datos,
+        image: randomImage,
+      });
+    }
     setDatos(initialState);
+    handleUpdate(false);
     handleMutate();
   };
 
@@ -67,14 +92,58 @@ function Form({ handleMutate }) {
         <div className="my-4">
           <input
             type="text"
-            placeholder="Address"
+            placeholder="City"
             className="form-control"
             onChange={handleInputChange}
-            name="address"
-            value={datos.address}
+            name="city"
+            value={datos.city}
           ></input>
         </div>
-        <button>add person</button>
+        <div className="my-4">
+          <input
+            type="text"
+            placeholder="Country"
+            className="form-control"
+            onChange={handleInputChange}
+            name="country"
+            value={datos.country}
+          ></input>
+        </div>
+        <div className="my-4">
+          <input
+            type="text"
+            placeholder="Zip"
+            className="form-control"
+            onChange={handleInputChange}
+            name="zip"
+            value={datos.zip}
+          ></input>
+        </div>
+        <div className="my-4">
+          <input
+            type="text"
+            placeholder="College"
+            className="form-control"
+            onChange={handleInputChange}
+            name="college"
+            value={datos.college}
+          ></input>
+          <div className="my-4">
+            <input
+              type="text"
+              placeholder="Color"
+              className="form-control"
+              onChange={handleInputChange}
+              name="color"
+              value={datos.color}
+            ></input>
+          </div>
+        </div>
+        {!updateMode ? (
+          <button type="submit">add person</button>
+        ) : (
+          <button type="submit">update person</button>
+        )}
       </form>
     </div>
   );
