@@ -36,46 +36,62 @@ function App() {
       <ul>
         {people.map((person) => (
           <>
-            <li key={person.id}>
-              <div className="w-36 h-36">
-                <img className="w-36 h-36" src={person.image} alt="person" />
+            <li key={person.id} className="my-8">
+              <div class="max-w-sm rounded overflow-hidden shadow-lg">
+                <img
+                  class="w-full"
+                  src={person.image}
+                  alt="Sunset in the mountains"
+                />
+                <div class="px-6 py-4">
+                  <div class="font-bold text-xl mb-2">{person.name}</div>
+                  <p class="text-gray-700 text-base">{person.college}</p>
+                </div>
+                <div class="px-6 pt-4 pb-2">
+                  <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+                    {person.age} years old
+                  </span>
+                  <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+                    id: {person.id}
+                  </span>
+                  <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+                    {person.city}
+                  </span>
+                  <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+                    {person.color}
+                  </span>
+                </div>
+                <div className="my-4 space-x-4">
+                  <button
+                    onClick={() => {
+                      deletePerson(person.id);
+                      handleMutate();
+                    }}
+                  >
+                    delete
+                  </button>
+                  {updateMode ? (
+                    <button
+                      onClick={() => {
+                        setUpdateId("");
+                        handleUpdate(false);
+                      }}
+                    >
+                      cancel
+                    </button>
+                  ) : (
+                    <button
+                      onClick={() => {
+                        setUpdateId(person.id);
+                        handleUpdate(true);
+                      }}
+                    >
+                      update
+                    </button>
+                  )}
+                </div>
               </div>
-              <h2>{person.name}</h2>
-              <p>{person.age}</p>
-              <p>{person.id}</p>
-              <p>{person.city}</p>
-              <p>{person.country}</p>
-              <p>{person.zip}</p>
-              <p>{person.college}</p>
-              <p>{person.color}</p>
             </li>
-            <button
-              onClick={() => {
-                deletePerson(person.id);
-                handleMutate();
-              }}
-            >
-              delete
-            </button>
-            {updateMode ? (
-              <button
-                onClick={() => {
-                  setUpdateId("");
-                  handleUpdate(false);
-                }}
-              >
-                cancel
-              </button>
-            ) : (
-              <button
-                onClick={() => {
-                  setUpdateId(person.id);
-                  handleUpdate(true);
-                }}
-              >
-                update
-              </button>
-            )}
           </>
         ))}
       </ul>
