@@ -1,20 +1,23 @@
 import { useState } from "react";
+import { addPeople } from "../firebase/api";
 
-
-function Form() {
-  const [datos, setDatos] = useState({
+function Form({ handleMutate }) {
+  const initialState = {
     name: "",
-    age: 0,
+    age: "",
     address: "",
     image: "",
-  });
+  };
+
+  const [datos, setDatos] = useState(initialState);
 
   const getRandomImage = async () => {
     const random = Math.floor(Math.random() * 30);
 
     const data = await fetch("https://picsum.photos/v2/list");
     const images = await data.json();
-    return images[random].download_url;
+    const image = images[random].download_url;
+    return image;
   };
 
   const handleInputChange = (event) => {
@@ -22,18 +25,19 @@ function Form() {
       ...datos,
       [event.target.name]: event.target.value,
     });
-    console.log(datos);
   };
 
-  const submitForm = (event) => {
+  const submitForm = async (event) => {
     event.preventDefault();
-    getRandomImage().then((image) => {
-      setDatos({
-        ...datos,
-        ["image"]: image,
-      });
+
+    const randomImage = await getRandomImage();
+
+    addPeople({
+      ...datos,
+      image: randomImage,
     });
-    console.log("enviando datos..." + JSON.stringify(datos));
+    setDatos(initialState);
+    handleMutate();
   };
 
   return (
@@ -47,6 +51,7 @@ function Form() {
             className="form-control"
             onChange={handleInputChange}
             name="name"
+            value={datos.name}
           ></input>
         </div>
         <div className="my-4">
@@ -56,6 +61,7 @@ function Form() {
             className="form-control"
             onChange={handleInputChange}
             name="age"
+            value={datos.age}
           ></input>
         </div>
         <div className="my-4">
@@ -65,6 +71,7 @@ function Form() {
             className="form-control"
             onChange={handleInputChange}
             name="address"
+            value={datos.address}
           ></input>
         </div>
         <button>add person</button>

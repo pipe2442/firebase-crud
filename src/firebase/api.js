@@ -25,6 +25,6 @@ export const onGetLinks = (callback) => {
 
 export const getPeopleList = () => getDocs(collection(db, collectionName));
 
-export const deleteWebsite = (id) => deleteDoc(doc(db, collectionName, id));
+export const deletePerson = (id) => deleteDoc(doc(db, collectionName, id));
 
 export const getWebsite = (id) => getDoc(doc(db, collectionName, id));
