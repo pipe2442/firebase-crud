@@ -21,7 +21,7 @@
         •
         <a href="#contributing">Contributing</a>
         •
-        <a href="#releasing">Releasing</a>\
+        <a href="#releasing">Releasing</a>
         •
         <a href="#license">License</a>
     </h4>
@@ -51,6 +51,8 @@
 </div>
 
 ![screenshot](https://i.ibb.co/wr8tJYx/trowbanner.png)
+
+![koombea](https://i.ibb.co/gtZFnPx/koombea-banner.png)
 
 ## Overview
 
@@ -202,4 +204,3 @@ For more information, see our [CONTRIBUTING](CONTRIBUTING.md) guide.
 ## License
 
 Copyright © 2022 Koombea®. All rights reserved.
-
