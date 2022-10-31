@@ -52,8 +52,6 @@
 
 ![screenshot](https://i.ibb.co/wr8tJYx/trowbanner.png)
 
-![koombea](https://i.ibb.co/gtZFnPx/koombea-banner.png)
-
 ## Overview
 
 T. Rowe Price is an independent investment management firm focused on helping clients meet their objectives and achieve their long-term financial goals. Clients rely on our active management approach, which we call strategic investing, and our broad range of equity, fixed income, and multi-asset investment capabilities.
@@ -200,6 +198,8 @@ When a change is merged into the `develop` branch the CI service will automatica
 When a change is merged into the `master` branch the CI service will automatically run the tests and generate a new build for production. A message will be posted to the team's slack channel.
 
 For more information, see our [CONTRIBUTING](CONTRIBUTING.md) guide.
+
+![koombea](https://i.ibb.co/gtZFnPx/koombea-banner.png)
 
 ## License
 
