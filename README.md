@@ -5,9 +5,9 @@
     </h1>
     <h4><b>Frontend internal seller demo app for TrowePrice</b></h4>
     <h4>
-        <a href="#links">Links</a>
+        <a href="##overview">Overview</a>
         •
-        <a href="#versions">Versions</a>
+        <a href="##builtwith">Versions</a>
         •
         <a href="#roadmap">Roadmap</a>
         •
