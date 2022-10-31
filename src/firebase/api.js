@@ -22,3 +22,6 @@ export const getPeopleList = () => getDocs(collection(db, collectionName));
 export const deletePerson = (id) => deleteDoc(doc(db, collectionName, id));
 
 export const getPerson = (id) => getDoc(doc(db, collectionName, id));
+
+const dog = 'buddy';
+console.log(dog)
