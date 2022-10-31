@@ -106,20 +106,12 @@ $ npx commitizen init cz-conventional-changelog --save-dev --save-exact
 
 Every time you want to add a new commit to this project instead of using `git commit -m 'commit message'` you can use `npx cz` to write commit messages with no lint errors. Additional info and docs can be found [here](https://github.com/commitizen/cz-cli).
 
-## Start the project
-
-```bash
-brew services start postgresql # Start Database
-redis-server                   # Start Redis
-bin/dev                        # Start Backend and Frontend
-```
-
 ## Conventions
 
 ### Code Styles
 
 - [Eslint](https://eslint.org/).
-  - For this project code style we are using [Standard](https://standardjs.com/) set up with [Eslint](https://eslint.org/).
+  - For this project code style we are using [Standard](https://standardjs.com/) with [Eslint](https://eslint.org/).
 - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode).
   - As code formatter we are using [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode).
 
@@ -137,6 +129,10 @@ All recent web browsers. Some of them:
 - Brave
 - Safari
 - Opera
+
+## Size-limit
+
+In order to calculate the real cost of this project, new features and implementations are written based on the bundler size limit. For this purpose, we are using [size-limit](https://github.com/ai/size-limit) as a performance budget tool. Every pull request will run a GitHub workflow that returns the bundle size, running time, and loading time to keep a record of the cost for each new feature or implementation. More information and docs can be found [here](https://github.com/ai/size-limit).
 
 ## Environments
 
@@ -158,7 +154,7 @@ All recent web browsers. Some of them:
 
 ## Contributing
 
-The `master` branch of this repository contains the latest stable source code for the production environment. This branch and the `develop` branch are protected to prevent those from being accidentally deleted. Force pushes are also disabled to enforce following the process described in the [Releasing](#releasing) section.
+The `main` branch of this repository contains the latest stable source code for the production environment. This branch and the `develop` branch are protected to prevent those from being accidentally deleted. Force pushes are also disabled to enforce following the process described in the [Releasing](#releasing) section.
 
 Please follow this steps for submitting any changes:
 
@@ -197,4 +193,3 @@ For more information, see our [CONTRIBUTING](CONTRIBUTING.md) guide.
 ## License
 
 Copyright © 2022 Koombea®. All rights reserved.
-
