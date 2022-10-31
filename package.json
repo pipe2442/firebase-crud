@@ -5,7 +5,8 @@
   "type": "module",
   "size-limit": [
     {
-      "path": "dist/assets/*.js"
+      "path": "dist/assets/*.js",
+      "limit": "4500 ms"
     }
   ],
   "scripts": {
