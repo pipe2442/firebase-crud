@@ -137,6 +137,13 @@ All recent web browsers. Some of them:
 - Safari
 - Opera
 
+## Design
+
+As design tool this project uses [Zeplin](https://zeplin.io/).
+
+TrowPrice Zeplin design can be found [here](https://app.zeplin.io/project/6356c0359fd86d1730e9b50a/dashboard). Access can be requested to TrowPrice design team or to any mantainer of this project.
+
+
 ## Size Limit
 
 In order to calculate the real cost of this project, new features and implementations are written based on the bundler size limit. For this purpose, we are using [size-limit](https://github.com/ai/size-limit) as a performance budget tool. Every pull request will run a GitHub workflow that returns the bundle size, running time, and loading time to keep a record of the cost for each new feature or implementation. More information and docs can be found [here](https://github.com/ai/size-limit).
@@ -204,3 +211,4 @@ For more information, see our [CONTRIBUTING](CONTRIBUTING.md) guide.
 ## License
 
 Copyright © 2022 Koombea®. All rights reserved.
+
