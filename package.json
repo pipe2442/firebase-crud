@@ -3,17 +3,25 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "size-limit": [
+    {
+      "path": "dist/assets/*.js"
+    }
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "size": "yarn build && size-limit",
     "preview": "vite preview"
   },
   "dependencies": {
     "firebase": "^9.12.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "size-limit": "^8.1.0"
   },
   "devDependencies": {
+    "@size-limit/preset-big-lib": "^8.1.0",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^2.1.0",
