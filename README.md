@@ -134,7 +134,7 @@ All recent web browsers. Some of them:
 
 In order to calculate the real cost of this project, new features and implementations are written based on the bundler size limit. For this purpose, we are using [size-limit](https://github.com/ai/size-limit) as a performance budget tool. Every pull request will run a GitHub workflow that returns the bundle size, running time, and loading time to keep a record of the cost for each new feature or implementation. More information and docs can be found [here](https://github.com/ai/size-limit).
 
-![demo](./src/assets/ezgif.com-gif-maker.gif)
+![demo](./src/assets/size.gif)
 
 ## Environments
 
