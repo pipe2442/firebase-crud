@@ -7,7 +7,7 @@
     <h4>
         <a href="##overview">Overview</a>
         •
-        <a href="##builtwith">Versions</a>
+        <a href="#versions">Versions</a>
         •
         <a href="#roadmap">Roadmap</a>
         •
@@ -131,6 +131,7 @@ All recent web browsers. Some of them:
 - Opera
 
 ## Size-limit
+## Versions
 
 In order to calculate the real cost of this project, new features and implementations are written based on the bundler size limit. For this purpose, we are using [size-limit](https://github.com/ai/size-limit) as a performance budget tool. Every pull request will run a GitHub workflow that returns the bundle size, running time, and loading time to keep a record of the cost for each new feature or implementation. More information and docs can be found [here](https://github.com/ai/size-limit).
 
