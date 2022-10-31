@@ -9,15 +9,21 @@
         •
         <a href="#built-with">Built With</a>
         •
-        <a href="#roadmap">Roadmap</a>
+        <a href="#getting-started">Getting Started</a>
         •
-        <a href="#development-guide">Development guide</a>
+        <a href="#conventions">Conventions</a>
         •
-        <a href="#deployment">Deployment</a>
+        <a href="#size-limit">Size Limit</a>
         •
-        <a href="#contact">Contact</a>
+        <a href="#environments">Environments</a>
         •
-        <a href="#copyright">Copyright</a>
+        <a href="#troubleshooting">Troubleshooting</a>
+        •
+        <a href="#contributing">Contributing</a>
+        •
+        <a href="#releasing">Releasing</a>\
+        •
+        <a href="#license">License</a>
     </h4>
     <h3>
         <a href="https://www.github.com/koombea">
@@ -59,11 +65,11 @@ T. Rowe Price is an independent investment management firm focused on helping cl
 - [TailwindCss](https://tailwindcss.com/).
 - [Eslint](https://eslint.org/).
 - [Prettier](https://prettier.io/).
-- [Jest](https://jestjs.io/). 
+- [Jest](https://jestjs.io/).
 - [Cypress](https://www.cypress.io/).
 - [Storybook](https://storybook.js.org/).
 - [SizeLimit](https://github.com/ai/size-limit).
-- [Commitizen](https://github.com/commitizen/cz-cli). 
+- [Commitizen](https://github.com/commitizen/cz-cli).
 - [VictoryChart](https://formidable.com/open-source/victory/docs/victory-chart/).
 - [Git](https://git-scm.com/).
 
@@ -116,7 +122,8 @@ Every time you want to add a new commit to this project instead of using `git co
   - As code formatter we are using [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode).
 
 ### Commits
-- [Commitizen](https://github.com/commitizen/cz-cli) 
+
+- [Commitizen](https://github.com/commitizen/cz-cli)
   - For commits convention we are using [commitizen](https://github.com/commitizen/cz-cli).
 
 ### Supported Web Browsers
@@ -130,7 +137,7 @@ All recent web browsers. Some of them:
 - Safari
 - Opera
 
-## Size-limit
+## Size Limit
 
 In order to calculate the real cost of this project, new features and implementations are written based on the bundler size limit. For this purpose, we are using [size-limit](https://github.com/ai/size-limit) as a performance budget tool. Every pull request will run a GitHub workflow that returns the bundle size, running time, and loading time to keep a record of the cost for each new feature or implementation. More information and docs can be found [here](https://github.com/ai/size-limit).
 
